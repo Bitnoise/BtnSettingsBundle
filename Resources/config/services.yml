@@ -1,0 +1,7 @@
+parameters:
+#    btn_settings.example.class: Btn\SettingsBundle\Example
+
+services:
+#    btn_settings.example:
+#        class: %btn_settings.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
