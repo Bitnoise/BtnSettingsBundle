@@ -37,5 +37,5 @@ btn_settings:
 Usage in templates:
 
 ```twig
-{{ btn_settings('meta-description') }}
+{{ btn_settings('meta-description') }} or {{ bs('meta-description') }}
 ```

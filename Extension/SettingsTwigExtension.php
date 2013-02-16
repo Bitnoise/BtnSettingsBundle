@@ -31,6 +31,7 @@ class SettingsTwigExtension extends \Twig_Extension
     public function getFunctions() {
         return array(
             'btn_settings' => new \Twig_Function_Method($this, 'get'),
+            'bs'           => new \Twig_Function_Method($this, 'get'), //alias for btn_settings
         );
     }
 
