@@ -1,3 +1,0 @@
-btn_settings_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: BtnSettingsBundle:Default:index }

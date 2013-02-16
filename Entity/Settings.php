@@ -5,12 +5,12 @@ namespace Btn\SettingsBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Configuration
+ * Settings
  *
- * @ORM\Table(name="configuration")
+ * @ORM\Table(name="settings")
  * @ORM\Entity
  */
-class Configuration
+class Settings
 {
     /**
      * @var integer
@@ -24,9 +24,9 @@ class Configuration
     /**
      * @var string
      *
-     * @ORM\Column(name="keyId", type="string", length=60)
+     * @ORM\Column(name="key", type="string", length=60)
      */
-    private $keyId;
+    private $key;
 
     /**
      * @var string
@@ -47,33 +47,10 @@ class Configuration
     }
 
     /**
-     * Set keyId
-     *
-     * @param string $keyId
-     * @return Configuration
-     */
-    public function setKeyId($keyId)
-    {
-        $this->keyId = $keyId;
-
-        return $this;
-    }
-
-    /**
-     * Get keyId
-     *
-     * @return string
-     */
-    public function getKeyId()
-    {
-        return $this->keyId;
-    }
-
-    /**
      * Set value
      *
      * @param string $value
-     * @return Configuration
+     * @return Settings
      */
     public function setValue($value)
     {
@@ -90,5 +67,28 @@ class Configuration
     public function getValue()
     {
         return $this->value;
+    }
+
+    /**
+     * Set key
+     *
+     * @param string $key
+     * @return Settings
+     */
+    public function setKey($key)
+    {
+        $this->key = $key;
+    
+        return $this;
+    }
+
+    /**
+     * Get key
+     *
+     * @return string 
+     */
+    public function getKey()
+    {
+        return $this->key;
     }
 }

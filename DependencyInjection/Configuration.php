@@ -6,23 +6,25 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * This is the class that validates and merges configuration from your app/config files
- *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
+ * Configuration
  */
 class Configuration implements ConfigurationInterface
 {
     /**
-     * {@inheritDoc}
+     * Validate configuration tree
      */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('btn_settings');
-
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('driver')->defaultValue('doctrine')
+                    ->validate()
+                        ->ifTrue(function($v) { return !in_array($v, array('doctrine')); })
+                        ->thenInvalid('Invalid btn_settings driver specified: %s')
+                    ->end()
+                ->end();
 
         return $treeBuilder;
     }
