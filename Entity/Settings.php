@@ -24,7 +24,7 @@ class Settings
     /**
      * @var string
      *
-     * @ORM\Column(name="key", type="string", length=60)
+     * @ORM\Column(name="key_name", type="string", length=60)
      */
     private $key;
 
@@ -78,14 +78,14 @@ class Settings
     public function setKey($key)
     {
         $this->key = $key;
-    
+
         return $this;
     }
 
     /**
      * Get key
      *
-     * @return string 
+     * @return string
      */
     public function getKey()
     {
