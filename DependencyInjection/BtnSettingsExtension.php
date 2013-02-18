@@ -23,6 +23,7 @@ class BtnSettingsExtension extends Extension
 
         //apply config
         $container->setParameter('btn_settings', array());
+        $container->setParameter('btn_settings.defaults', array());
         $container->setParameter('btn_settings.driver', $config['driver']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));

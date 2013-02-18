@@ -2,13 +2,19 @@ services:
     btn.settings:
         class: Btn\SettingsBundle\Factory\SettingsFactory
         arguments:
-            container: '@service_container'
-            driver:    '%btn_settings.driver%'
-    btn.settings.manager:
-        class: Btn\SettingsBundle\Model\SettingsManager
-        arguments:
-            em:        '@doctrine.orm.entity_manager'
-            container: '@service_container'
+            # we don't need whole container here
+            # container: '@service_container'
+            em:         '@doctrine.orm.entity_manager'
+            driver:     '%btn_settings.driver%'
+            parameters: '%btn_settings.defaults%'
+    # This shouldn't be exposed!!
+    # encapsulation and factory pattern
+    #
+    # btn.settings.manager:
+    #     class: Btn\SettingsBundle\Model\SettingsManager
+    #     arguments:
+    #         em:        '@doctrine.orm.entity_manager'
+    #         container: '@service_container'
     btn.settings.twig.extension:
         class: Btn\SettingsBundle\Extension\SettingsTwigExtension
         arguments: [ '@btn.settings' ]

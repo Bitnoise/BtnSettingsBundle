@@ -24,9 +24,9 @@ class Settings
     /**
      * @var string
      *
-     * @ORM\Column(name="key_name", type="string", length=60)
+     * @ORM\Column(name="name", type="string", length=60)
      */
-    private $key;
+    private $name;
 
     /**
      * @var string
@@ -70,25 +70,25 @@ class Settings
     }
 
     /**
-     * Set key
+     * Set name
      *
-     * @param string $key
+     * @param string $name
      * @return Settings
      */
-    public function setKey($key)
+    public function setName($name)
     {
-        $this->key = $key;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get key
+     * Get name
      *
      * @return string
      */
-    public function getKey()
+    public function getName()
     {
-        return $this->key;
+        return $this->name;
     }
 }
