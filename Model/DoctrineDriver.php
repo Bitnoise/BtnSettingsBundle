@@ -2,8 +2,8 @@
 
 namespace Btn\SettingsBundle\Model;
 
-use Btn\SettingsBundle\Model\SettingsInterface;
-use Btn\SettingsBundle\Entity\Settings;
+use Btn\SettingsBundle\Model\SettingInterface;
+use Btn\SettingsBundle\Entity\Setting;
 use Doctrine\ORM\EntityManager;
 
 /**
@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityManager;
  * @package btn.settings
  * @author michalsoczynski
  **/
-class DoctrineDriver implements SettingsInterface
+class DoctrineDriver implements SettingInterface
 {
     /**
      * @var EntityManager
@@ -40,7 +40,7 @@ class DoctrineDriver implements SettingsInterface
     {
         $this->defaults = $defaults;
         $this->em       = $em;
-        $this->repo     = $em->getRepository('BtnSettingsBundle:Settings');
+        $this->repo     = $em->getRepository('BtnSettingsBundle:Setting');
     }
 
     /**
@@ -81,7 +81,7 @@ class DoctrineDriver implements SettingsInterface
         //create new one if we don't have this key in table
         if ($settings === null) {
             //create new
-            $settings = new Settings();
+            $settings = new Setting();
             $settings->setName($name);
             $this->em->persist($settings);
         }

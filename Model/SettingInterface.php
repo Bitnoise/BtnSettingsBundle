@@ -2,7 +2,7 @@
 
 namespace Btn\SettingsBundle\Model;
 
-interface SettingsInterface
+interface SettingInterface
 {
     /**
      * Set config value

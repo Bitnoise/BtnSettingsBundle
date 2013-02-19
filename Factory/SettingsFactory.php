@@ -3,7 +3,7 @@
 namespace Btn\SettingsBundle\Factory;
 
 use Doctrine\ORM\EntityManager;
-use Btn\SettingsBundle\Model\SettingsInterface;
+use Btn\SettingsBundle\Model\SettingInterface;
 
 /**
  * Main Settings service (factory)
@@ -49,7 +49,7 @@ class SettingsFactory
         }
 
         //wrong interface
-        if (!($this->driver instanceof SettingsInterface)) {
+        if (!($this->driver instanceof SettingInterface)) {
             throw $this->wrongInterfaceException($driver);
         }
 
