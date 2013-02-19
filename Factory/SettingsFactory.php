@@ -85,6 +85,17 @@ class SettingsFactory
     }
 
     /**
+     * Return all entities from table Settings
+     *
+     * @return array
+     *
+     **/
+    public function getAll()
+    {
+        return $this->driver->getAll();
+    }
+
+    /**
      *
      * @param string $name Driver name.
      * @return \RuntimeException
