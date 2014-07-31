@@ -7,7 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Settings
  *
- * @ORM\Table(name="setting")
+ * @ORM\Table(name="setting", indexes={
+ *     @ORM\Index(name="name_idx", columns={"name"})},
+ * )
  * @ORM\Entity
  */
 class Setting
