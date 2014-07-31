@@ -31,7 +31,7 @@ class SettingsFactory
      * Constructor
      *
      * @param ServiceContainer $container
-     * @param string $driver
+     * @param string           $driver
      *
      **/
     public function __construct(EntityManager $em, $driver, $defaults = array())
@@ -41,7 +41,7 @@ class SettingsFactory
         //create driver from providers
         $classname = '\\Btn\\SettingsBundle\\Model\\'.ucfirst($driver).'Driver';
 
-        if(class_exists($classname)) {
+        if (class_exists($classname)) {
             $this->driver = new $classname($em, $defaults);
         } else {
             //file not found
@@ -97,21 +97,21 @@ class SettingsFactory
 
     /**
      *
-     * @param string $name Driver name.
+     * @param  string            $name Driver name.
      * @return \RuntimeException
      */
-    protected function driverNotFoundException($name) {
-
+    protected function driverNotFoundException($name)
+    {
         return new \RuntimeException(sprintf('Settings driver "%s" couldn\'t be found.', $name));
     }
 
     /**
      *
-     * @param string $name Driver name.
+     * @param  string            $name Driver name.
      * @return \RuntimeException
      */
-    protected function wrongInterfaceException($name) {
-
+    protected function wrongInterfaceException($name)
+    {
         return new \RuntimeException(sprintf('Settings driver "%s" doesn\'t implement the SettingsInterface interface.', $name));
     }
 }

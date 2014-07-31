@@ -28,19 +28,21 @@ class SettingsTwigExtension extends \Twig_Extension
         $this->factory = $factory;
     }
 
-    public function getFunctions() {
+    public function getFunctions()
+    {
         return array(
             'btn_settings' => new \Twig_Function_Method($this, 'get'),
             'bs'           => new \Twig_Function_Method($this, 'get'), //alias for btn_settings
         );
     }
 
-    public function get($key) {
-
+    public function get($key)
+    {
         return $this->factory->get($key);
     }
 
-    public function getName() {
+    public function getName()
+    {
         return 'btn.settings';
     }
 

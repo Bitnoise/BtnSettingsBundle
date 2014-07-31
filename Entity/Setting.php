@@ -35,7 +35,6 @@ class Setting
      */
     private $value;
 
-
     /**
      * Get id
      *
@@ -49,7 +48,7 @@ class Setting
     /**
      * Set value
      *
-     * @param string $value
+     * @param  string   $value
      * @return Settings
      */
     public function setValue($value)
@@ -72,7 +71,7 @@ class Setting
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string   $name
      * @return Settings
      */
     public function setName($name)
